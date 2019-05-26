@@ -6,6 +6,9 @@ body {
   position: relative;
 }
 .modal {
+  display: none;
+}
+.modal.active {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -16,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.modal .wrapper {
+.modal.active .wrapper {
   box-sizing: border-box;
   background-color: #ffffff;
   width: 380px;
@@ -27,12 +30,19 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-.modal .wrapper .title {
+.modal.active .wrapper .title {
   text-align: center;
   font-size: 1.2rem;
   color: #666666;
+  position: relative;
 }
-.modal .wrapper .content {
+.modal.active .wrapper .title .close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  cursor: pointer;
+}
+.modal.active .wrapper .content {
   font-size: 16px;
   color: #999999;
   width: -webkit-fill-available;
@@ -42,17 +52,18 @@ body {
   margin-top: 15px;
   border-radius: 5px;
   border: 1px solid #e8e8e8;
+  outline: none;
 }
-.modal .wrapper .grade {
+.modal.active .wrapper .grade {
   margin-top: 15px;
   color: #363636;
 }
-.modal .wrapper .addBtn {
+.modal.active .wrapper .addBtn {
   color: #363636;
   padding-top: 20px;
   text-align: center;
 }
-.modal .wrapper .addBtn span {
+.modal.active .wrapper .addBtn span {
   background: #00daab;
   padding: 5px 30px;
   border-radius: 30px;
