@@ -53,6 +53,7 @@ main {
   left: 50%;
   bottom: 40px;
   transform: translateX(-50%);
+  z-index: 5;
 }
 li {
   display: inline-block;
@@ -80,7 +81,6 @@ li .content {
   line-height: 26px;
   word-break: break-word;
   padding: 15px 0;
-  border: 1px 0 solid #e8e8e8;
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
 }
@@ -97,10 +97,11 @@ li .uncompleted {
 li .completed {
   color: #ffffff;
   font-size: 15px;
+  font-weight: bold;
   margin-top: 15px;
   display: inline-block;
   background-color: #00daaa;
-  padding: 3px 12px;
+  padding: 3px 24px;
   border-radius: 10px;
   cursor: pointer;
 }

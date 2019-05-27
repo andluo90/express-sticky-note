@@ -2,11 +2,14 @@ require('../../less/waterfall.less')
 
 const toast = require('./toast')
 const note = require('./note')
+const event = require('./eventHub')
 
 //瀑布流布局
 function waterfall(){
     this.$containter = $('#waterfall')
     this.width = $('header .wrapper').width()
+    this.event = event
+
     this.init()
 }
 
@@ -20,6 +23,7 @@ waterfall.prototype = {
         note(id=444,datTime='2018-01-04',content='abc123abc123abc123abc3abc123abc123abc123',status=0)
         note(id=555,datTime='2018-01-05',content='abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123',status=1)
         this.layout()
+        this.bind()
         
     },
 
@@ -50,10 +54,6 @@ waterfall.prototype = {
 
         })
         
-        
-        
-        this.bind()
-
     },
 
     bind:function(){
@@ -68,6 +68,12 @@ waterfall.prototype = {
             console.log('标记为完成')
 
         })
+
+        this.event.on('reLayout',()=>{
+            console.log('重新布局...')
+            this.layout()
+        })
+
         console.log('绑定事件成功.')
     }
 }
