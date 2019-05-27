@@ -8,6 +8,14 @@ const header = require('../mod/header')
 header()
 waterfall()
 
+!function(){
+    //修复bug
+    const right = $('header .wrapper').css('marginLeft') //计算添加按钮距离页面右边的距离
+    $('.addNote').css({right:right})
+}()
+    
+    
+
 $('.addNote').on('click',function(){
     modal.show()
 })

@@ -10,7 +10,7 @@ router.get('/notes',(req,res,next)=>{
 
 router.post('/notes/add',(req,res,next)=>{
     //新增notes
-    console.log(`add id:${req.body.id}, note:${req.body.note}`)
+    console.log(`note:${req.body.note}`)
     res.send({status:0,msg:'新增note成功.'})
 })
 

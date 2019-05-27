@@ -22,8 +22,18 @@ waterfall.prototype = {
         note(id=333,datTime='2018-01-03',content='abc123abc123abc123abc123abc123abc123abc123abc123',status=1)
         note(id=444,datTime='2018-01-04',content='abc123abc123abc123abc3abc123abc123abc123',status=0)
         note(id=555,datTime='2018-01-05',content='abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123',status=1)
-        this.layout()
-        this.bind()
+        $.get('/api/notes')
+         .done((data)=>{
+             console.log('获取数据成功.')
+             console.log(data)
+             this.layout()
+             this.bind()
+         })
+         .fail(()=>{
+            console.log('网络异常')
+             toast('网络异常')
+         })
+       
         
     },
 
@@ -59,8 +69,14 @@ waterfall.prototype = {
     bind:function(){
         //布局成功后进行绑定事件
         this.$containter.on('click','.delete',function(e){
-            toast('删除成功.')
-            console.log('点击删除.')
+            $.post('api/notes/delete',{id:123})
+             .done((data)=>{
+                 console.log(data)
+                 toast('删除成功')
+             })
+             .fail((error)=>{
+                 toast('网络异常')
+             })
 
         })
         this.$containter.on('click','.uncompleted',function(e){

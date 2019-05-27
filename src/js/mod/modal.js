@@ -36,10 +36,21 @@ Modal.prototype = {
     addNote(){
         const val = this.$textarea.val()
         if(val !== ''){
-            note('123','2019-05-20',val,0)
-            this.close()
-            this.event.emit('reLayout')
-            toast('添加成功')
+            $.post('api/notes/add',{id:123,note:'for test.'})
+             .done((data)=>{
+                console.log('新增成功')
+                console.log(data)
+                note('123','2019-05-20',val,0)
+                this.close()
+                this.event.emit('reLayout')
+                toast('添加成功')
+             })
+             .fail((error)=>{
+                 console.log('网络异常')
+                 toast('网络异常')
+             })
+            
+            
         }else{
             toast('内容不能为空')
         }

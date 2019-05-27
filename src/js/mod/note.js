@@ -32,10 +32,8 @@ note.prototype = {
         
         
 
-    },
-    delete:function(){
-        toast('删除成功.',3)
     }
+    
     
 }
 
