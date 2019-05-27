@@ -1,3 +1,7 @@
 require('../../less/index.less')
 
-console.log('Hello Abc...')
+const waterfall = require('../mod/waterfall')
+
+waterfall()
+
+console.log('index.js 执行完成.')
