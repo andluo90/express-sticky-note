@@ -1,0 +1,75 @@
+.modal {
+    display: none;
+}
+
+.modal.active {
+    // 模态窗口
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #37554f94;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        
+        box-sizing: border-box;
+        background-color: #ffffff;
+        width: 380px;
+        border: 1px solid #e8e8e8;
+        border-radius: 5px;
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666666;
+            position: relative;
+
+            .close {
+                position: absolute;
+                top:-10px;
+                right:10px;
+                cursor: pointer;
+            }
+        }
+
+
+        .content {
+            font-size:16px;
+            color:#999999;
+            width: -webkit-fill-available;
+            height: 120px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: 1px solid #e8e8e8;
+            outline: none;
+        }
+
+        .grade {
+            margin-top: 15px;
+            color: #363636;
+        }
+        .addBtn {
+            color: #363636;
+            padding-top: 20px;
+            text-align: center;
+
+            span {
+                background: #00daab;
+                padding: 5px 30px;
+                border-radius: 30px;
+                color: #eeeeee;
+                cursor: pointer;
+            }
+        }
+    }
+}
