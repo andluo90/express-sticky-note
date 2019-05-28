@@ -16,6 +16,8 @@ waterfall()
     
     
 
+
+
 $('.addNote').on('click',function(){
     modal.show()
 })
