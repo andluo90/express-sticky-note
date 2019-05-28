@@ -20,7 +20,7 @@ note.prototype = {
                 <span class="delete" data-id=${this.id}>x</span>
                 </div>
                 <div class="content">
-                    ${this.content}
+                    <span class="detail">${this.content}</span>
                     <span class="iconfont icon-bianji" data-id=${this.id}></span>
                 </div>
                 <div class="bottom">

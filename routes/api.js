@@ -30,12 +30,13 @@ router.post('/notes/add',(req,res,next)=>{
 
 router.post('/notes/edit',(req,res,next)=>{
     //修改note
-    console.log(`edit id:${req.body.id}, note:${req.body.note}`)
+    console.log(`edit id:${req.body.id}, note:${req.body.text}`)
+    const {id,text} = req.body
     Note.update({
-        text:'后台测试更新.'
+        text:text
     },{
         where:{
-            id:2
+            id:id
         }
     }).then(()=>{
         res.send({status:0,msg:'编辑note成功'})
