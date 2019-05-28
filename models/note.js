@@ -35,6 +35,10 @@ const Note = sequelize.define('note',{
     status:{
         type:Sequelize.INTEGER,
         defaultValue:0
+    },
+    deleted:{
+        type:Sequelize.INTEGER,
+        defaultValue:1
     }
     
 })
@@ -54,6 +58,23 @@ const Note = sequelize.define('note',{
 // Note.findAll({raw: true}).then(function(data) {
 //       console.log(data)
 // })
+
+// Note.create({
+//     user:'andluo',
+//     text:'后台测试333',
+//     grade:4,
+//     status:0
+// }).then((data)=>{
+//     console.log('id is ------')
+//     console.log(data.dataValues.id)
+// })
+
+// Note.findAll({
+//     raw:true,
+//     where:{deleted:1}})
+//     .then((data)=>{
+//         console.log(data)
+//     })
 
 module.exports = Note
 

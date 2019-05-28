@@ -36,11 +36,12 @@ Modal.prototype = {
     addNote(){
         const val = this.$textarea.val()
         if(val !== ''){
-            $.post('api/notes/add',{id:123,note:'for test.'})
+            //添加的时候还要加上用户和等级
+            $.post('api/notes/add',{text:val})
              .done((data)=>{
-                console.log('新增成功')
-                console.log(data)
-                note('123','2019-05-20',val,0)
+                const id = data.id
+                date = new Date().toISOString().split('T')[0]
+                note(id,date,val,0)
                 this.close()
                 this.event.emit('reLayout')
                 toast('添加成功')

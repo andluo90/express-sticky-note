@@ -6,8 +6,7 @@ const Note = require('../models/note')
 
 router.get('/notes',(req,res,next)=>{
     //获取所有的notes
-    Note.findAll({raw:true}).then((data)=>{
-        console.log(data)
+    Note.findAll({raw:true,where:{deleted:1}}).then((data)=>{
         res.send({status:0,msg:'get all notes done.',data:data})
     }).catch((error)=>{
         res.send({status:1,msg:`数据库异常:${error}`})
@@ -16,14 +15,14 @@ router.get('/notes',(req,res,next)=>{
 
 router.post('/notes/add',(req,res,next)=>{
     //新增notes
-    console.log(`note:${req.body.note}`)
+    const text  = req.body.text
     Note.create({
         user:'andluo',
-        text:'后台测试3',
-        grade:3,
-        status:1
-    }).then(()=>{
-        res.send({status:0,msg:'新增note成功.'})
+        text:text,
+        grade:0,
+        status:0
+    }).then((data)=>{
+        res.send({status:0,id:data.dataValues.id,msg:'新增note成功.'})
     }).catch((error)=>{
         res.send({status:1,msg:`新增失败:${error}`})
     })
@@ -46,12 +45,33 @@ router.post('/notes/edit',(req,res,next)=>{
     })
 })
 
+router.post('/notes/completed',(req,res,next)=>{
+    //修改note
+    console.log(`edit id:${req.body.id}`)
+    Note.update({
+        status:1
+    },{
+        where:{
+            id:req.body.id
+        }
+    }).then(()=>{
+        res.send({status:0,msg:'标志note成功'})
+    }).catch((error)=>{
+        res.send({status:1,msg:`标志Note失败:${error}`})
+
+    })
+})
+
 router.post('/notes/delete',(req,res,next)=>{
     //修改note
     console.log(`delete id:${req.body.id}`)
-    Note.destroy({
-        where:{
-            id:3
+    Note.update(
+        {
+            deleted:0
+        },
+        {
+            where:{
+                id:req.body.id
         }
     }).then(()=>{
         res.send({status:0,msg:'删除note成功.'})

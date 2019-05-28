@@ -16,16 +16,15 @@ function waterfall(){
 waterfall.prototype = {
     init:function(){
         //获取数据
-        note(id=111,datTime='2018-01-01',content='abc123..',status=1)
-        note(id=222,datTime='2018-01-02',conid=111,datTime='2018-01-01',content='abc123..',status=0)
-        note(id=555,datTime='2018-01-05',content='abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123',status=1)
-        note(id=333,datTime='2018-01-03',content='abc123abc123abc123abc123abc123abc123abc123abc123',status=1)
-        note(id=444,datTime='2018-01-04',content='abc123abc123abc123abc3abc123abc123abc123',status=0)
-        note(id=555,datTime='2018-01-05',content='abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc123',status=1)
         $.get('/api/notes')
-         .done((data)=>{
-             console.log('获取数据成功.')
-             console.log(data)
+         .done((rep)=>{
+             console.log('获取所有note成功.')
+             console.log(rep)
+             
+             rep.data.forEach((i)=>{
+                const date = new Date(i.updatedAt).toISOString().split('T')[0]
+                note(id=i.id,dateTime=date,content=i.text,status=i.status)
+             })
              this.layout()
              this.bind()
          })
@@ -63,16 +62,21 @@ waterfall.prototype = {
             l[min_index] = l[min_index]+$ele.outerHeight(includeMargin=true)
 
         })
+        console.log('重新布局完成.')
         
     },
 
     bind:function(){
         //布局成功后进行绑定事件
+        const self = this
         this.$containter.on('click','.delete',function(e){
-            $.post('api/notes/delete',{id:123})
+            console.log(`delete id is ${e.target.dataset.id}`)
+            $.post('api/notes/delete',{id:e.target.dataset.id})
              .done((data)=>{
                  console.log(data)
+                 self.layout()
                  toast('删除成功')
+                 
              })
              .fail((error)=>{
                  toast('网络异常')
@@ -80,8 +84,16 @@ waterfall.prototype = {
 
         })
         this.$containter.on('click','.uncompleted',function(e){
-            toast('已标记为完成.')
-            console.log('标记为完成')
+            $.post('api/notes/completed',{id:e.target.dataset.id})
+             .done((data)=>{
+                console.log(data)
+                self.layout()
+                toast('已标记为完成.')
+                 
+             })
+             .fail((error)=>{
+                toast('网络异常')
+            })
 
         })
 
@@ -90,7 +102,6 @@ waterfall.prototype = {
             this.layout()
         })
 
-        console.log('绑定事件成功.')
     }
 }
 

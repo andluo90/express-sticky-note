@@ -17,14 +17,14 @@ note.prototype = {
             <li class="item">
                 <div class="title">
                 <span class="datetime">${this.dateTime}</span>
-                <span class="delete">x</span>
+                <span class="delete" data-id=${this.id}>x</span>
                 </div>
                 <div class="content">
                     ${this.content}
                 </div>
                 <div class="bottom">
                 <div class="grade"></div>
-                <div class="${this.status===0 ?'uncompleted':'completed'}">${this.status===0?'未完成':'<span class="iconfont icon-gouxuan"></span>'}</div>
+                <div data-id=${this.id} class="${this.status===0 ?'uncompleted':'completed'}">${this.status===0?'未完成':'<span class="iconfont icon-gouxuan"></span>'}</div>
                 </div>
             </li>`
         this.$container.prepend($(tmp))
@@ -37,7 +37,7 @@ note.prototype = {
     
 }
 
-function Note(id=1,dateTime='2019-01-01',content='Test...',status=0){
+function Note(id=1,dateTime='2019-01-01',content='text...',status=0){
     return new note(id=id,dateTime=dateTime,content=content,status=status)
 }
 
