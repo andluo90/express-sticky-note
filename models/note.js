@@ -50,9 +50,10 @@ const Note = sequelize.define('note',{
 //     })
 // })
 
-Note.findAll({raw: true}).then(function(data) {
-      console.log(data)
-})
+// 查询Demo
+// Note.findAll({raw: true}).then(function(data) {
+//       console.log(data)
+// })
 
 module.exports = Note
 
