@@ -72,9 +72,14 @@ li .title {
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
+  position: relative;
+  font-size: 1.1rem;
 }
 li .title .delete {
   cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: -10px;
 }
 li .title .delete:hover {
   transform: scale(1.3);
@@ -120,6 +125,15 @@ li .completed {
   padding: 3px 24px;
   border-radius: 10px;
   cursor: pointer;
+}
+li .grade {
+  margin-top: 20px;
+  margin-left: 3px;
+  color: #dbdbdb;
+  cursor: pointer;
+}
+li .grade .icon-xingxingman:hover {
+  color: #00d4ed;
 }
 .modal {
   display: none;
