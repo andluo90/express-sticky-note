@@ -5,7 +5,10 @@ const event = require('./eventHub')
 
 
 function Modal(){
+    
     this.container = $('.modal')
+    this.$title = this.container.find('.title .name')
+    this.$btnName = this.container.find('.addBtn>span')
     this.$textarea = this.container.find('.content')
     this.event = event
     this.bind()
@@ -23,17 +26,26 @@ Modal.prototype = {
         })
         this.container.find('.addBtn span').on('click',function(){
             console.log('添加便笺')
-            self.addNote()
+            self.submit()
         })
     },
-    show:function(){
+    add:function(){
+        this.$title.text('添加新便笺')
+        this.$btnName.text('添加')
         this.$textarea.val('')
         this.container.addClass('active')
+    },
+    edit:function(id,content){
+        this.$title.text('修改便笺')
+        this.$btnName.text('修改')
+        this.$textarea.val(content)
+        this.container.addClass('active')
+
     },
     close:function(){
         this.container.removeClass('active')        
     },
-    addNote(){
+    submit(){
         const val = this.$textarea.val()
         if(val !== ''){
             //添加的时候还要加上用户和等级

@@ -2,6 +2,7 @@ require('../../less/waterfall.less')
 
 const toast = require('./toast')
 const note = require('./note')
+const modal = require('./modal')
 const event = require('./eventHub')
 
 //瀑布流布局
@@ -70,10 +71,10 @@ waterfall.prototype = {
         //布局成功后进行绑定事件
         const self = this
         this.$containter.on('click','.delete',function(e){
-            console.log(`delete id is ${e.target.dataset.id}`)
-            $.post('api/notes/delete',{id:e.target.dataset.id})
+            const id = e.target.dataset.id
+            $.post('api/notes/delete',{id:id})
              .done((data)=>{
-                 console.log(data)
+                 $(`li[data-id=${id}]`).remove()
                  self.layout()
                  toast('删除成功')
                  
@@ -84,16 +85,27 @@ waterfall.prototype = {
 
         })
         this.$containter.on('click','.uncompleted',function(e){
-            $.post('api/notes/completed',{id:e.target.dataset.id})
+            const id = e.target.dataset.id
+            $.post('api/notes/completed',{id:id})
              .done((data)=>{
                 console.log(data)
-                self.layout()
+                const $tmp = $(`div[data-id=${id}]`)
+                $tmp.addClass('completed').removeClass('uncompleted')
+                $tmp.text('')
+                $tmp.append('<span class="iconfont icon-gouxuan"></span>')
                 toast('已标记为完成.')
                  
              })
              .fail((error)=>{
                 toast('网络异常')
             })
+
+        })
+
+        this.$containter.on('click','.icon-bianji',function(e){
+            const id = e.target.dataset.id
+            const text = $(e.target).parent().text().trim()
+            modal.edit(id,text)
 
         })
 

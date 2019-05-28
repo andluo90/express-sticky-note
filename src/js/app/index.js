@@ -19,7 +19,7 @@ waterfall()
 
 
 $('.addNote').on('click',function(){
-    modal.show()
+    modal.add() //显示添加note的窗口
 })
 
 console.log('index.js 执行完成.')

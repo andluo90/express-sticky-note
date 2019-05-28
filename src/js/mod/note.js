@@ -14,13 +14,14 @@ function note(id,dateTime,content,status=0,){
 note.prototype = {
     show:function(){
         const tmp = `
-            <li class="item">
+            <li class="item" data-id=${this.id}>
                 <div class="title">
                 <span class="datetime">${this.dateTime}</span>
                 <span class="delete" data-id=${this.id}>x</span>
                 </div>
                 <div class="content">
                     ${this.content}
+                    <span class="iconfont icon-bianji" data-id=${this.id}></span>
                 </div>
                 <div class="bottom">
                 <div class="grade"></div>

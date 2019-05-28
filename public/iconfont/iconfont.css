@@ -1,10 +1,10 @@
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1558948468030'); /* IE9 */
-  src: url('iconfont.eot?t=1558948468030#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQQAAsAAAAACJAAAAPDAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqEUIN5ATYCJAMQCwoABCAFhG0HQRtkB8gekqQ7CSJQCwAATAkQD1/7vZ67b4OoEBVLHh8VSyzjgByQ8VFFW6Er66pYdqr//+i9f4OKGOWdDiqOeYU8Ma+gvoPvCR7Gnuz/mqaAqkJGVaKsAhyooj7IAf17af6A9emCE+uEAju1i8Np8zyw+ZblMteyqAswnhzoWIOiLE0LpJwbxi4vcjuBal3cIStRt2uoyvR+gTihXQOqCaVcgQuVkvKCqVm8goLKdIc+AS/e5+MvTIYySVlBH7q6N7Vh8MPppwp2LckgzUEAazg92CwKTACZOCg0bikEwQmYavk3RbNApUqJH04/rn+qSBJkb0VYaZhInf+8KKcLayF2WlAcGMuikPhxTaHgpwr7AtIzqIThzwD+YWxHXgjlKzq6+gupa5xx3+L4D/GzI0gCJxitnOiz8wbbx3DOO02sGglCwozoNiz41fHxjx2xogjvOP1F3oLj4oaWLeI+hpzET4nCj9ThrYVJg/xjh1HteZrd0c/bZYYJpzqjxHPHokw/bnOULZAZ5/rQzgoCAyhMq+bLY2xNeSDL2DmCI29L1J5jE0/opDO7KFvIa2dNlSbkHYsmiqML1ljlB9y6B/+Ayk+xcX9bSc36fiNq2nQNgb+7kPjnQlQivM6he8kKHSTWrWK6kiUrRdtj4coxHq8bX9s0X4YNpGTJWe7DathzJ5lU/BSMwqOaZDvuf4qhb/gHa2so//ov5BB/GRz83/G/ldVL/DDk3/MzjtM9YpiLLY77txmzfcrWU39s20ZZ3aMwZ8zmBcN82z6ixF+btj5O99Dn1mJWtHwau+i2ZcSfhyq+FDNbJJoEOvFfrB6RT0ADBhwKKUCpHYfiFADo9R09AyUWE7CEH+A71m69hjK1Av5XqmXwTeex0uN2Y75FVmPW62Y1LMsKR1flLHEtpurKNr1Pf0K1YaUErc2+DmFuA5E+VHIsCEmFTihUGkBm7ASUqTEN5SrNQ7Vx0bNrtKhQELkKY5oAhEarkNT7AoVGL5AZ+wXKtPsP5RoDg2probdkjaGgVcMryBCyMecRaUsljqmRup+5JFdHBsc5Hn5LvPc96OPpnY7MKSEeYkTlndurEgcJVjFGgd0oihSWsQrIkhYlkva9vIiiO7VyVQx1yxgxCGJDOR4hmkVJOE51Uc+8f4m4tIiBK0rK1FuE7fntIx+evBsg58KkUcml3FLpjquninAgAlNiKAroSWQEFVRW3ClALKKF6uBP9XmhSkRTYWt6cXyHa6CafnaOFEXkKFO+T4unzQpZqh+0kRSLS+8IAAA=') format('woff2'),
-  url('iconfont.woff?t=1558948468030') format('woff'),
-  url('iconfont.ttf?t=1558948468030') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1558948468030#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1559047493519'); /* IE9 */
+  src: url('iconfont.eot?t=1559047493519#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAASAAAsAAAAACSgAAAQyAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqFRIRQATYCJAMUCwwABCAFhG0HShveB8gOJTmhwwBgAFBEPNSvoW//37sguEQBlVDx+KrYEqpOHVsgY6qiIlQ9kqsCEvrmv039SEX8NzU1wkRp8qE0QkdIp57M5VSjM5HI/CR+2ttxr///vcpZtsHmtW9xWeNlzUEJ5QQwPDlga7Yb17QCt1QrmJc6jF1cxtUE+s1KhR2tb6WAs6StCsQVnmOAc8woSxihV9PmHEzxBDjoLXfxJ4DH7vfHX7AjnCmaStt47FydGlT+SPjmQtyZuGO6bQaW/uxgjlGxCZDE1VznFYSf3ITQL8VJBwH5Z72K8iPh6/Gvd7+5TEwAZCtS9+tIH394qRAtDQ1C0sFU8iPBxKj8OI4R/LiLkfx0MSoQNeyBfgzhIxAzQCPP2dYIoe0bzMijPr7g3xj0OD2UErTmPxpCze2WTYmdyp7x5ckYRauVSO8DvK9bPlPWt8qh3RhtsQUdu+YvjwScvQpuWhP2Hw+y2ejD9pRdtpzlVuVjc5PdDjYs/mPWCIuF2nk0glq2M8H+fpLt67RdZ0YPBKCd5qC5uw/J5/zVk0yB9K7lQZN2m8eW+VPKnctGuVSQ2mGSeWUARNPLFeMRiWrcwRVJMpQ7Od8k72E59h4JPk/Hlo2qTXKo0/5x81iI457R0IANpnL/fjIwbM/6R1lBFVFg925Qt78OqJ/v2cMw5mdpz9yxclnlMgCr4S0JYb7Fx68T+3IVnZvj573r6+KTDwLbg0rlQqJ+Eli8F78wxcHMEZtcQmtNU5waYoka58a0F6teWHxPR8wldFNMmR/mQjzawE0m31fg4IHbhGJf7nUCXyffQmjOu9+Vl8lnFRX/4/9ERb0mL1f+/v+fxeJ7ZenSKwqc9yF6r+IJo5U+UazfI/teCWr2Rj9duvSx4jEqfBq9fqvF97InqyQqGbscnDR+N6X+0FfzFd1SGrLxLLTzr8p+LE7jvhBOB/MAdKnEDfy1ez1TgnoNAOp3/AbQydVG0L/N7/jr//fTLK/Sf85uCb75tddBc5faTt17+1zBTyKu2ZGyBlal2GqKxFDjpF8AFSnbjw56x33qRz1Vu5zQayqEoscMVL3mcEnaBI0Bu6DV6wD0W9VwfMAEESGyDytWAwijjkMx7BlUo57ikvQRGtP+QGs0COi3Fn5nHLAQvGuNiBgJqWHvfMirBD1rWCRXr7IbcUYtI0alLpNGooGPwKwt25KZBqRHYh9bDINctiSxkBUFHawH10NarQAHRKEfqaT0PkkaKM7Yei7vidJVgg64OkKEMCSIGtRrPoinItBj7d4S19TXd0M4RloMsaStxEtDRAb85FCWdJk1cA1IX6vtXG5iMIiTTSJhQSyRQAeqB3ZEqycF0ED+vH6IiiRdX4v4gGIZqBtbF6WPr9Zd4z7opz1eEyVqZDTRak/xjL6fd+R4qc/Y68QJxnlGRk/qhEEEAAAA') format('woff2'),
+  url('iconfont.woff?t=1559047493519') format('woff'),
+  url('iconfont.ttf?t=1559047493519') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1559047493519#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -13,6 +13,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bianji:before {
+  content: "\e6af";
 }
 
 .icon-github:before {
