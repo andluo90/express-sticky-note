@@ -244,6 +244,10 @@ header .wrapper .right {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+  position: relative;
+}
+header .wrapper .right:hover .logout {
+  display: block;
 }
 header .wrapper .right .userIcon {
   display: inline-block;
@@ -253,6 +257,18 @@ header .wrapper .right .userIcon {
   height: 35px;
   background-size: contain;
   border-radius: 50%;
+}
+header .wrapper .right .logout {
+  display: none;
+  position: absolute;
+  background: #8080809e;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding-top: 12px;
+  border-radius: 30px;
 }
 header .wrapper .right .iconfont {
   font-size: 1.4rem;

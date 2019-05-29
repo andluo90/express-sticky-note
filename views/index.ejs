@@ -24,6 +24,9 @@
           <% if(isLogin) { %>
             <span class='userIcon' style="background-image:url('<%= user.avatar %>')"></span>
             <span class='userName'><%= user.username %></span>
+            <span class="logout">
+                <a href="/auth/logout">退出</a>
+            </span>
           <% } else { %>
             <span class="iconfont icon-github"> 
                 <a href='/auth/github'> Github登录</a>

@@ -49,6 +49,13 @@ header {
             font-size: 1.1rem;
             display: flex;
             align-items: center;
+            position: relative;
+
+            &:hover {
+                .logout {
+                    display: block;
+                }
+            }
 
             .userIcon {
                 display: inline-block;
@@ -59,6 +66,19 @@ header {
                 // background-image: url(https://avatars3.githubusercontent.com/u/19493781?v=4);
                 background-size: contain;
                 border-radius: 50%;
+            }
+
+            .logout {
+                display: none;
+                position: absolute;
+                background: #8080809e;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+                padding-top: 12px;
+                border-radius: 30px;
             }
             
             .iconfont {
