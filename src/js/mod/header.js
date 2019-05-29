@@ -1,11 +1,14 @@
 require('../../less/header.less')
+const event = require('./eventHub')
 
 function header(){
     this.container = $('header')
     this.$all = this.container.find('.all')
-    this.$completed = this.container.find('.completed')
+    this.$uncompleted = this.container.find('.uncompleted')
     this.$order = this.container.find('.order')
     this.$login = this.container.find('.login')
+    this.event = event
+    
     this.bind()
 
 }
@@ -17,14 +20,15 @@ header.prototype = {
         this.$all.on('click',function(){
             self.show(0)
         })
-        this.$completed.on('click',function(){
+        this.$uncompleted.on('click',function(){
             self.show(1)
         })
         this.$order.on('click',function(){
             self.show(2)
         })
         this.$login.on('click',function(){
-            self.login()
+            $('.login').toggleClass('active')
+            $('.loading').toggleClass('active')
         })
     },
     show:function(id){
@@ -32,18 +36,22 @@ header.prototype = {
             if(!this.$all.hasClass('active')){
                 console.log('显示全部')
                 this.$all.addClass('active').siblings().removeClass('active')
+                this.event.emit('showAll')
             }
         }else if(id === 1){
-            console.log('显示已完成')
-            this.$completed.addClass('active').siblings().removeClass('active')
+            if(!this.$uncompleted.hasClass('active')){
+                console.log('显示未完成')
+                this.$uncompleted.addClass('active').siblings().removeClass('active')
+                this.event.emit('showUncompleted')
+    
+            }
+            
         }else{
             console.log('显示排序')
             this.$order.addClass('active').siblings().removeClass('active')
         }
     },
-    login(){
-        console.log('登录成功')
-    }
+    
 }
 
 function Header(){

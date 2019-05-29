@@ -17,7 +17,7 @@
         </div>
         <div class="middle">
           <span class='all active'>全部</span>
-          <span class='completed'>已完成</span>
+          <span class='uncompleted'>未完成</span>
           <span class='order'>正序</span>
         </div>
         <div class="login right">
@@ -28,9 +28,11 @@
                 <a href="/auth/logout">退出</a>
             </span>
           <% } else { %>
-            <span class="iconfont icon-github"> 
-                <a href='/auth/github'> Github登录</a>
-            </span>
+            <a href='/auth/github'>
+              <span class="iconfont icon-github"> 
+                  Github登录
+              </span>
+            </a>
           <% } %>
           
         </div>
@@ -62,6 +64,9 @@
         </div>
       </div>
     </div>
+    
+    <span class="iconfont icon-loading loading"> 
+    
     <script src="/js/index.js"></script>
 
   </body>

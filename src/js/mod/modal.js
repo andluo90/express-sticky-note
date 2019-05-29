@@ -62,7 +62,7 @@ Modal.prototype = {
                 })
                 .fail((error)=>{
                     console.log('网络异常')
-                    toast('网络异常')
+                    toast('网络异常','error')
                 })
             }else if(this.type === 'edit'){
                 const id = this.noteId
@@ -78,14 +78,14 @@ Modal.prototype = {
                 })
                 .fail((error)=>{
                     console.log('网络异常')
-                    toast('网络异常')
+                    toast('网络异常','error')
                 })
             }
             
             
             
         }else{
-            toast('内容不能为空')
+            toast('内容不能为空','error')
         }
     }
     

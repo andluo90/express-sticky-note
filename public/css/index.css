@@ -5,6 +5,26 @@ body {
   margin-top: 0px;
   position: relative;
 }
+.icon-loading.loading {
+  display: none;
+  font-size: 1.9rem;
+  color: #00daaa;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+}
+.icon-loading.loading.active {
+  display: inline-block;
+  animation: 1s rotate linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 main {
   background: #f4f5f5;
   border-top: 1px solid #e8e8e8;
@@ -54,6 +74,10 @@ main {
   bottom: 40px;
   transform: translateX(-50%);
   z-index: 5;
+}
+.message.error {
+  background-color: #ea530b;
+  box-shadow: 0px 7px 13px 0px #ea530b;
 }
 li {
   display: inline-block;
@@ -133,6 +157,9 @@ li .grade {
   cursor: pointer;
 }
 li .grade .icon-xingxingman:hover {
+  color: #00d4ed;
+}
+li .grade .icon-xingxingman.active {
   color: #00d4ed;
 }
 .modal {
@@ -246,15 +273,19 @@ header .wrapper .right {
   align-items: center;
   position: relative;
 }
+header .wrapper .right.active {
+  background: #adadad;
+  cursor: none;
+}
 header .wrapper .right:hover .logout {
   display: block;
 }
 header .wrapper .right .userIcon {
   display: inline-block;
   margin-right: 7px;
-  background-color: orange;
-  width: 35px;
-  height: 35px;
+  background-color: #00daab;
+  width: 30px;
+  height: 30px;
   background-size: contain;
   border-radius: 50%;
 }
@@ -267,14 +298,11 @@ header .wrapper .right .logout {
   right: 0;
   bottom: 0;
   text-align: center;
-  padding-top: 12px;
+  padding-top: 9px;
   border-radius: 30px;
 }
 header .wrapper .right .iconfont {
-  font-size: 1.4rem;
-}
-header .wrapper .right .iconfont a {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 header .wrapper .right a {
   text-decoration: none;

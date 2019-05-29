@@ -12,6 +12,9 @@ function waterfall(){
     this.event = event
 
     this.init()
+    
+    this.bind()
+
 }
 
 waterfall.prototype = {
@@ -27,11 +30,28 @@ waterfall.prototype = {
                 note(id=i.id,dateTime=date,content=i.text,status=i.status)
              })
              this.layout()
-             this.bind()
+             
+             //为所有的星星绑定事件
+             $('.icon-xingxingman').hover((e)=>{
+                const x = $(e.target)
+                console.log("active...")
+                x.prevAll().toggleClass('active')
+                
+            })
+
+            $('.icon-xingxingman').on('click',(e)=>{
+                const grade = $(e.target.dataset.grade)
+                const x = $(e.target)
+                x.css({color:'#00d4ed'})
+                x.prevAll().css({color:'#00d4ed'})
+                x.nextAll().css({color:'#dbdbdb'})
+                
+            })
+            
          })
          .fail(()=>{
             console.log('网络异常')
-             toast('网络异常')
+             toast('网络异常','error')
          })
        
         
@@ -80,7 +100,7 @@ waterfall.prototype = {
                  
              })
              .fail((error)=>{
-                 toast('网络异常')
+                 toast('网络异常','error')
              })
 
         })
@@ -113,6 +133,20 @@ waterfall.prototype = {
             console.log('重新布局...')
             this.layout()
         })
+
+        this.event.on('showUncompleted',()=>{
+            console.log("显示未完成的")
+            this.$containter.find('li[data-status=1]').remove()
+            this.layout()
+        })
+
+        this.event.on('showAll',()=>{
+            console.log('显示全部')
+            this.$containter.find('li').remove()
+            this.init()
+        })
+
+        
 
     }
 }

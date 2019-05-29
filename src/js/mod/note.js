@@ -14,7 +14,7 @@ function note(id,dateTime,content,status=0,){
 note.prototype = {
     show:function(){
         const tmp = `
-            <li class="item" data-id=${this.id}>
+            <li class="item" data-id=${this.id} data-status=${this.status}>
                 <div class="title">
                 <span class="datetime">${this.dateTime}</span>
                 <span class="delete" data-id=${this.id}>x</span>
@@ -25,11 +25,11 @@ note.prototype = {
                 </div>
                 <div class="bottom">
                 <div class="grade">
-                        <span class="iconfont icon-xingxingman"></span>
-                        <span class="iconfont icon-xingxingman"></span>
-                        <span class="iconfont icon-xingxingman"></span>
-                        <span class="iconfont icon-xingxingman"></span>
-                        <span class="iconfont icon-xingxingman"></span>
+                        <span class="iconfont icon-xingxingman" data-grade=1></span>
+                        <span class="iconfont icon-xingxingman" data-grade=2></span>
+                        <span class="iconfont icon-xingxingman" data-grade=3></span>
+                        <span class="iconfont icon-xingxingman" data-grade=4></span>
+                        <span class="iconfont icon-xingxingman" data-grade=5></span>
 
                 </div>
                 <div data-id=${this.id} class="${this.status===0 ?'uncompleted':'completed'}">${this.status===0?'未完成':'<span class="iconfont icon-gouxuan"></span>'}</div>
