@@ -27,24 +27,32 @@ waterfall.prototype = {
              
              rep.data.forEach((i)=>{
                 const date = new Date(i.updatedAt).toISOString().split('T')[0]
-                note(id=i.id,dateTime=date,content=i.text,status=i.status)
+                console.log(i.grade)
+                note(i.id,date,i.text,i.status,i.grade)
              })
              this.layout()
              
              //为所有的星星绑定事件
              $('.icon-xingxingman').hover((e)=>{
                 const x = $(e.target)
-                console.log("active...")
                 x.prevAll().toggleClass('active')
                 
             })
 
-            $('.icon-xingxingman').on('click',(e)=>{
-                const grade = $(e.target.dataset.grade)
+            //只为waterfall下的星星绑定点击事件，与modal下的事件不一样
+            this.$containter.find('.icon-xingxingman').on('click',(e)=>{
                 const x = $(e.target)
-                x.css({color:'#00d4ed'})
-                x.prevAll().css({color:'#00d4ed'})
-                x.nextAll().css({color:'#dbdbdb'})
+                const id = x.parents('li').data('id')
+                const grade = x.data('grade')
+                $.post('/api/notes/grade',{id:id,grade:grade})
+                 .done(()=>{
+                    x.css({color:'#00d4ed'})
+                    x.prevAll().css({color:'#00d4ed'})
+                    x.nextAll().css({color:'#dbdbdb'})
+                    toast('设置成功')
+                 }).fail((error)=>{
+                     toast('评级失败','error')
+                 })
                 
             })
             
@@ -124,8 +132,9 @@ waterfall.prototype = {
 
         this.$containter.on('click','.icon-bianji',function(e){
             const id = e.target.dataset.id
+            const grade = $(e.target).parents('li').data('grade')
             const text = $(e.target).parent().text().trim()
-            modal.edit(id,text)
+            modal.edit(id,text,grade)
 
         })
 

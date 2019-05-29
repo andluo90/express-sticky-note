@@ -27,14 +27,14 @@ router.get('/notes',(req,res,next)=>{
 
 router.post('/notes/add',(req,res,next)=>{
     //新增notes
-    const text  = req.body.text
+    const {text,grade}  = req.body
     const user = req.session && req.session.user ? req.session.user : undefined
     if(user){
         Note.create({
             uid:user.id,
             user:user.username,
             text:text,
-            grade:0,
+            grade:grade,
             status:0
         }).then((data)=>{
             res.send({status:0,id:data.dataValues.id,msg:'新增note成功.'})
@@ -50,11 +50,12 @@ router.post('/notes/add',(req,res,next)=>{
 router.post('/notes/edit',(req,res,next)=>{
     //修改note
     console.log(`edit id:${req.body.id}, note:${req.body.text}`)
-    const {id,text} = req.body
+    const {id,text,grade} = req.body
     const user = req.session && req.session.user ? req.session.user : undefined
     if(user){
         Note.update({
-            text:text
+            text:text,
+            grade:grade
         },{
             where:{
                 uid:user.id,
@@ -88,6 +89,29 @@ router.post('/notes/completed',(req,res,next)=>{
             res.send({status:0,msg:'标志note成功'})
         }).catch((error)=>{
             res.send({status:1,msg:`标志Note失败:${error}`})
+    
+        })
+    }else{
+        res.send({status:0,msg:`未登录`})
+    }
+    
+})
+
+router.post('/notes/grade',(req,res,next)=>{
+    //标记note
+    const user = req.session && req.session.user ? req.session.user : undefined
+    if(user){
+        Note.update({
+            grade:req.body.grade
+        },{
+            where:{
+                uid:user.id,
+                id:req.body.id
+            }
+        }).then(()=>{
+            res.send({status:0,msg:'评级成功'})
+        }).catch((error)=>{
+            res.send({status:1,msg:`评级成功:${error}`})
     
         })
     }else{

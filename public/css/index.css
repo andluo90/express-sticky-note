@@ -55,6 +55,18 @@ main {
   font-size: 40px;
   position: absolute;
 }
+.grade {
+  margin-top: 20px;
+  margin-left: 3px;
+  color: #dbdbdb;
+  cursor: pointer;
+}
+.grade .icon-xingxingman:hover {
+  color: #00d4ed;
+}
+.grade .icon-xingxingman.active {
+  color: #00d4ed;
+}
 #waterfall {
   list-style: none;
   margin: 0 auto;
@@ -150,18 +162,6 @@ li .completed {
   border-radius: 10px;
   cursor: pointer;
 }
-li .grade {
-  margin-top: 20px;
-  margin-left: 3px;
-  color: #dbdbdb;
-  cursor: pointer;
-}
-li .grade .icon-xingxingman:hover {
-  color: #00d4ed;
-}
-li .grade .icon-xingxingman.active {
-  color: #00d4ed;
-}
 .modal {
   display: none;
 }
@@ -213,6 +213,9 @@ li .grade .icon-xingxingman.active {
 }
 .modal.active .wrapper .grade {
   margin-top: 15px;
+  margin-bottom: 10px;
+}
+.modal.active .wrapper .grade .desc {
   color: #363636;
 }
 .modal.active .wrapper .addBtn {
