@@ -21,7 +21,15 @@
           <span class='order'>正序</span>
         </div>
         <div class="login right">
-          <span class="iconfont icon-github"> Github登录</span>
+          <% if(isLogin) { %>
+            <span class='userIcon' style="background-image:url('<%= user.avatar %>')"></span>
+            <span class='userName'><%= user.username %></span>
+          <% } else { %>
+            <span class="iconfont icon-github"> 
+                <a href='/auth/github'> Github登录</a>
+            </span>
+          <% } %>
+          
         </div>
       </div>
       

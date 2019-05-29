@@ -43,12 +43,35 @@ header {
         .right {
             background: #00daab;
             color: #ffffff;
-            padding: 7px 22px;
+            padding: 7px 18px;
             border-radius: 30px;
             cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+
+            .userIcon {
+                display: inline-block;
+                margin-right: 7px;
+                background-color: orange;
+                width: 35px;
+                height: 35px;
+                // background-image: url(https://avatars3.githubusercontent.com/u/19493781?v=4);
+                background-size: contain;
+                border-radius: 50%;
+            }
             
             .iconfont {
-                font-size:1.3rem;
+                font-size:1.4rem;
+
+                a {
+                    font-size:1.1rem;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color:#ffffff;
             }
         }
         

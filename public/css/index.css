@@ -238,10 +238,29 @@ header .wrapper .middle .active {
 header .wrapper .right {
   background: #00daab;
   color: #ffffff;
-  padding: 7px 22px;
+  padding: 7px 18px;
   border-radius: 30px;
   cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+header .wrapper .right .userIcon {
+  display: inline-block;
+  margin-right: 7px;
+  background-color: orange;
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  border-radius: 50%;
 }
 header .wrapper .right .iconfont {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+}
+header .wrapper .right .iconfont a {
+  font-size: 1.1rem;
+}
+header .wrapper .right a {
+  text-decoration: none;
+  color: #ffffff;
 }
