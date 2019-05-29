@@ -21,6 +21,9 @@ const sequelize = new Sequelize({
 //         });
 
 const Note = sequelize.define('note',{
+    uid:{
+        type:Sequelize.INTEGER,
+    },
     user:{
         type:Sequelize.STRING,
         allowNull:false
