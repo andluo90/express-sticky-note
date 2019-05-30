@@ -3,11 +3,11 @@ const toast = require('./toast')
 
 function note(id,dateTime,content,status,grade){
     this.$container = $('#waterfall')
-    this.id = id;
-    this.dateTime = dateTime;
-    this.content = content;
-    this.status = status || 0;
-    this.grade = grade
+    this.id = id || 0
+    this.dateTime = dateTime
+    this.content = content
+    this.status = status || 0
+    this.grade = grade || 0
 
     this.show()
 }

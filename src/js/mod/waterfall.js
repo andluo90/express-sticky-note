@@ -68,6 +68,9 @@ waterfall.prototype = {
     layout:function(){
         //获取完数据后进行布局 
         const t = this.$containter.find('li')
+        if(t.length === 0){
+            toast('暂无数据.','error')
+        }
 
         //计算需要几列`
         let tWidth = $(t[0]).outerWidth()
